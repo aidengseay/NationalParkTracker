@@ -5,7 +5,7 @@
 # Created by Aiden and Stef, Winter 2023
 ################################################################################
 # IMPORTS
-import NatParkUtility
+import Utilities.NatParkUtility as NatParkUtility
 
 ################################################################################
 # CONSTANTS
