@@ -15,7 +15,7 @@ CHOICES = 4
 ################################################################################
 # MAIN LOG FUNCTION
 
-def mainLogUtility():
+def mainLogUtility(NatParks):
 
     choiceRuns = True
 

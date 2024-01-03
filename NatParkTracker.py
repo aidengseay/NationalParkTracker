@@ -14,12 +14,17 @@ import os
 ################################################################################
 # CONSTANTS
 CHOICES = 4
+US_CITIES_FILE_NAME = "USCities.csv"
+NAT_PARKS_FILE_NAME = "NatParks.csv"
 
 ################################################################################
 # MAIN FUNCTION
 def main():
 
     programRuns = True
+
+    USCities = NatParkUtilities.importCSVFile(US_CITIES_FILE_NAME)
+    NatParks = NatParkUtilities.importCSVFile(NAT_PARKS_FILE_NAME)
 
     while programRuns:
 
@@ -36,11 +41,11 @@ def main():
 
         match choice:
             case 1:
-                NatParkLogUtility.mainLogUtility()
+                NatParkLogUtility.mainLogUtility(NatParks)
             case 2:
-                NatParkEditUtility.mainEditUtility()
+                NatParkEditUtility.mainEditUtility(NatParks)
             case 3:
-                NatParkRecUtility.mainRecommendUtility()
+                NatParkRecUtility.mainRecommendUtility(USCities, NatParks)
             case 4:
                 programRuns = False
             

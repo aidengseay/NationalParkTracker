@@ -15,7 +15,7 @@ CHOICES = 4
 ################################################################################
 # MAIN EDIT FUNCTION
 
-def mainEditUtility():
+def mainEditUtility(NatParks):
 
     choiceRuns = True
 
