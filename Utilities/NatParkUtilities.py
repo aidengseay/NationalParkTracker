@@ -5,6 +5,8 @@
 # Created by Aiden and Stef, Winter 2023
 ################################################################################
 # IMPORTS
+import pandas
+import os
 
 ################################################################################
 # CONSTANTS
@@ -28,5 +30,16 @@ def getProgramChoiceInput(maxChoice):
             print(f"Error: input must be int between {MIN} and {maxChoice}")
 
     return int(choice)
+
+
+def importCSVFile( fileName ):
+    
+    path = os.path.realpath(__file__)
+    dir = os.path.dirname(path)
+    dir = dir.replace("Utilities", "Data")
+    os.chdir(dir)
+    
+    return pandas.read_csv(fileName)
+
 
 ################################################################################
