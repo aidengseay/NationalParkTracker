@@ -6,15 +6,13 @@
 ################################################################################
 # IMPORTS
 import Utilities.NatParkLogUtility as NatParkLogUtility
-import Utilities.NatParkRecUtility as NatParkRecUtility
 import Utilities.NatParkEditUtility as NatParkEditUtility
 import Utilities.NatParkUtilities as NatParkUtilities
 import os
 
 ################################################################################
 # CONSTANTS
-CHOICES = 4
-US_CITIES_FILE_NAME = "USCities.csv"
+CHOICES = 3
 NAT_PARKS_FILE_NAME = "NatParks.csv"
 
 ################################################################################
@@ -23,7 +21,6 @@ def main():
 
     programRuns = True
 
-    USCities = NatParkUtilities.importCSVFile(US_CITIES_FILE_NAME)
     NatParks = NatParkUtilities.importCSVFile(NAT_PARKS_FILE_NAME)
 
     while programRuns:
@@ -34,8 +31,7 @@ def main():
 
         print("[1] Look at National Park Log")
         print("[2] Edit National Park Log")
-        print("[3] Get National Park Recommendations")
-        print("[4] Quit Program")
+        print("[3] Quit Program")
 
         choice = NatParkUtilities.getProgramChoiceInput(CHOICES)
 
@@ -45,8 +41,6 @@ def main():
             case 2:
                 NatParkEditUtility.mainEditUtility(NatParks)
             case 3:
-                NatParkRecUtility.mainRecommendUtility(USCities, NatParks)
-            case 4:
                 programRuns = False
             
     print("\nExit National Park Tracker")

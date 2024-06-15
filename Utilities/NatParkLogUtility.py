@@ -15,7 +15,7 @@ CHOICES = 4
 ################################################################################
 # MAIN LOG FUNCTION
 
-def mainLogUtility(NatParks):
+def mainLogUtility(natParks):
 
     choiceRuns = True
 
@@ -34,11 +34,11 @@ def mainLogUtility(NatParks):
 
         match choice:
             case 1:
-                getPercentage()
+                getPercentage(natParks)
             case 2:
-                getParksToDo()
+                getParksToDo(natParks)
             case 3:
-                getParksDone()
+                getParksDone(natParks)
             case 4:
                 choiceRuns = False
 
@@ -46,14 +46,24 @@ def mainLogUtility(NatParks):
 ################################################################################
 # SUPPORTING FUNCTIONS
                 
-def getParksDone():
-    ...
+def getParksDone(df):
+    print(df)
 
-def getParksToDo():
+    parksCompleted = df.loc[(df['stef']) & (df['aiden'])]
+
+    print(parksCompleted)
+    
+
+    input()
+
+def getParksToDo(df):
     ...
                 
-def getPercentage():
-    ...
+def getPercentage(df):
+    
+    parksCompleted = df.loc[(df['stef']) & (df['aiden'])]
+
+    percent = ( len(parksCompleted) / len(df) ) * 100
 
 
 ################################################################################
